@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_sort_params.c                              /  (___\      /  (___\     */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abbenham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 04:10:04 by abbenham          #+#    #+#             */
-/*   Updated: 2017/08/09 11:41:50 by abbenham         ###   ########.fr       */
+/*   Updated: 2017/08/30 13:56:45 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include "libft.h" 
 
 int	ft_str_cmp(char *s1, char *s2)
 {
@@ -36,19 +30,7 @@ int	ft_str_cmp(char *s1, char *s2)
 	return (0);
 }
 
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
-
-int	main(int argc, char **argv)
+int	ft_sort_params(int argc, char **argv)
 {
 	char	*tmp;
 	int	i;
