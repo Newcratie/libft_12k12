@@ -1,4 +1,5 @@
 NAME=libft12k12
+DYN=libft12dyn
 CC=gcc
 CFLAGS=-Iincludes -Wall -Wextra -Werror -fPIC
 SRCS=$(wildcard srcs/*.c)
@@ -8,13 +9,13 @@ all: static dynamic
 
 static: $(NAME).a
 
-dynamic: $(NAME).so
+dynamic: $(DYN).so
 
 $(NAME).a: $(OBJS)
 	ar rcs $(NAME).a $(OBJS)
 
-$(NAME).so: $(OBJS)
-	gcc -shared -o $(NAME).so $(OBJS)
+$(DYN).so: $(OBJS)
+	gcc -shared -o $(DYN).so $(OBJS)
 
 objs/%.o: srcs/%.c
 	@mkdir -p objs
@@ -25,6 +26,6 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME).a
-	@rm -f $(NAME).so
+	@rm -f $(DYN).so
 
 re: fclean all
