@@ -1,13 +1,20 @@
-NAME=libft12k12.a
+NAME=libft12k12
 CC=gcc
-CFLAGS=-Iincludes -Wall -Wextra -Werror
+CFLAGS=-Iincludes -Wall -Wextra -Werror -fPIC
 SRCS=$(wildcard srcs/*.c)
 OBJS=$(patsubst srcs/%.c,objs/%.o,$(SRCS))
 
-all: $(NAME)
+all: static dynamic
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+static: $(NAME).a
+
+dynamic: $(NAME).so
+
+$(NAME).a: $(OBJS)
+	ar rcs $(NAME).a $(OBJS)
+
+$(NAME).so: $(OBJS)
+	gcc -shared -o $(NAME).so $(OBJS)
 
 objs/%.o: srcs/%.c
 	@mkdir -p objs
@@ -17,6 +24,7 @@ clean:
 	@rm -rf objs
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME).a
+	@rm -f $(NAME).so
 
 re: fclean all
