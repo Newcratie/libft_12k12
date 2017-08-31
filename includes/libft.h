@@ -3,10 +3,10 @@
 /*                                                  _ ____        _ ____      */
 /*   libft.h                                       /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
-/*   By: link <marvin@42.fr>                       | |/ __/| |/ /| |/ __/     */
+/*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/08/29 23:23:55 by link          |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/08/30 01:43:46 by link                                     */
+/*   Created: 2017/08/31 15:34:32 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/08/31 15:34:35 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int		ft_ultimate_range(int **range, int min, int max);
 
 //Math
 int		ft_is_prime(int nb);
+int		ft_find_next_prime(int nb);
 int		ft_fibonacci(int index);
 #endif
