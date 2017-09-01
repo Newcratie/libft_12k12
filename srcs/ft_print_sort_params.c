@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                              /  (___\      /  (___\     */
-/*                                                    +:+ +:+         +:+     */
-/*   By: abbenham <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/09 04:10:04 by abbenham          #+#    #+#             */
-/*   Updated: 2017/08/30 13:56:45 by Karim                                    */
+/*                                                  _ ____        _ ____      */
+/*   ft_print_sort_params.c                        /  (___\      /  (___\     */
+/*                                                 - | __) )_  __- | __) )    */
+/*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
+/*                                                 | | |___|   < | | |___     */
+/*   Created: 2017/09/01 17:53:36 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/01 17:57:36 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-int	ft_str_cmp(char *s1, char *s2)
+static int	ft_str_cmp(char *s1, char *s2)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ int	ft_str_cmp(char *s1, char *s2)
 	return (0);
 }
 
-int	ft_sort_params(int argc, char **argv)
+void	ft_print_sort_params(int argc, char **argv)
 {
 	char	*tmp;
 	int	i;
@@ -56,5 +56,4 @@ int	ft_sort_params(int argc, char **argv)
 		ft_putchar('\n');
 		i++;
 	}
-	return (0);
 }

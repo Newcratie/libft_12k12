@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: abbenham <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/12 19:35:41 by abbenham          #+#    #+#             */
-/*   Updated: 2017/08/16 11:55:54 by abbenham         ###   ########.fr       */
+/*                                                  _ ____        _ ____      */
+/*   ft_range.c                                    /  (___\      /  (___\     */
+/*                                                 - | __) )_  __- | __) )    */
+/*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
+/*                                                 | | |___|   < | | |___     */
+/*   Created: 2017/09/01 11:57:03 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/01 12:02:19 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,8 @@ int		*ft_range(int min, int max)
 	if (min >= max)
 		return (NULL);
 	size = max - min;
-	range = malloc(sizeof(int) * size + 1);
+	range = (int*)malloc(sizeof(int) * size + 1);
 	while (i < size)
-	{
-		range[i] = min;
-		min++;
-		i++;
-	}
+		range[i++] = min++;
 	return (range);
 }

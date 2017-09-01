@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                  _ ____        _ ____      */
-/*   ft_str_is_lowercase.c                         /  (___\      /  (___\     */
+/*   ft_print_rev_params.c                         /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/09/01 18:00:26 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/01 18:01:06 by Karim                                    */
+/*   Created: 2017/09/01 17:57:15 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/01 17:57:16 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
-{
-	int i;
+#include "libft.h" 
 
-	i = 0;
-	while (str[i])
+void	ft_print_rev_params(int argc, char **argv)
+{
+	int	i;
+
+	i = argc - 1;
+	while (i > 0)
 	{
-		if (str[i] < 97 || str[i] > 122)
-			return (0);
-		i++;
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
+		i--;
 	}
-	return (1);
 }
