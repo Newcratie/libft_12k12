@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                       /  (___\      /  (___\     */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abbenham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 02:01:09 by abbenham          #+#    #+#             */
-/*   Updated: 2017/08/17 15:28:01 by abbenham         ###   ########.fr       */
+/*   Updated: 2017/08/31 15:41:40 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-void	ft_print_line(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
+#include "libft.h"
 
 void	ft_print_words_tables(char **tab)
 {
@@ -33,8 +19,7 @@ void	ft_print_words_tables(char **tab)
 	i = 0;
 	while (tab[i])
 	{
-		ft_print_line(tab[i]);
-		ft_putchar('\n');
+		ft_putendl(tab[i]);
 		i++;
 	}
 }

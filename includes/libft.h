@@ -6,7 +6,7 @@
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
 /*   Created: 2017/08/31 15:34:32 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/08/31 15:34:35 by Karim                                    */
+/*   Updated: 2017/08/31 15:43:58 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 //string
 void		ft_putchar(char c);
 void		ft_putstr(char *str);
+void		ft_putendl(char *str);
+void		ft_print_words_tables(char **tab);
 int		ft_strlen(char *str);
 int		ft_megalen(int argc, char **argv);
 char		*ft_concat_params(int argc, char **argv);
