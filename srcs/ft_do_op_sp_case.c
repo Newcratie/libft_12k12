@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                  _ ____        _ ____      */
-/*   ft_strlowcase.c                               /  (___\      /  (___\     */
+/*   ft_do_op_sp_case.c                            /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/09/01 18:17:09 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/01 18:17:29 by Karim                                    */
+/*   Created: 2017/09/01 21:09:14 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/01 21:09:35 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
-{
-	int		i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i])
+int		ft_forest(int ac, char **av)
+{
+	int		flag;
+
+	flag = 0;
+	if (ac != 4 || ft_strlen(av[2]) != 1)
 	{
-		if (str[i] > 64 && str[i] < 91)
-			str[i] += 32;
-		i++;
+		flag++;
+		ft_putnbr(0);
 	}
-	return (str);
+	if (av[2][0] == '/' && ft_atoi(av[3]) == 0)
+	{
+		ft_putstr("Stop : division by zero\n");
+		flag++;
+	}
+	if (av[2][0] == '%' && ft_atoi(av[3]) == 0)
+	{
+		ft_putstr("Stop : modulo by zero\n");
+		flag++;
+	}
+	return (flag);
 }

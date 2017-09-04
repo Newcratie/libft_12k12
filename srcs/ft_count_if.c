@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                  _ ____        _ ____      */
-/*   ft_strlowcase.c                               /  (___\      /  (___\     */
+/*   ft_count_it.c                                 /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/09/01 18:17:09 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/01 18:17:29 by Karim                                    */
+/*   Created: 2017/09/02 20:49:02 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/02 20:49:27 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+#include "libft.h"
+
+int		ft_count_if(char **tab, int (*f)(char*))
 {
 	int		i;
+	int		count;
 
 	i = 0;
-	while (str[i])
+	count = 0;
+	while (tab[i])
 	{
-		if (str[i] > 64 && str[i] < 91)
-			str[i] += 32;
+		if (1 == f(tab[i]))
+			count++;
 		i++;
 	}
-	return (str);
+	return (count);
 }

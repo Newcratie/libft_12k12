@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                  _ ____        _ ____      */
-/*   ft_strlowcase.c                               /  (___\      /  (___\     */
+/*   ft_is_sort.c                                  /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/09/01 18:17:09 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/01 18:17:29 by Karim                                    */
+/*   Created: 2017/09/02 20:50:19 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/02 22:21:47 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+#include "libft.h"
+
+int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
 	int		i;
+	int		flag1;
+	int		flag2;
 
 	i = 0;
-	while (str[i])
+	flag1 = 1;
+	flag2 = 1;
+	while (i < length-1)
 	{
-		if (str[i] > 64 && str[i] < 91)
-			str[i] += 32;
+		if (0 > f(tab[i],tab[i+1]))
+			flag1 = 0;
+		if (0 < f(tab[i],tab[i + 1]))
+			flag2 = 0;
 		i++;
 	}
-	return (str);
+	return (flag1 == 1 || flag2 == 1)
 }

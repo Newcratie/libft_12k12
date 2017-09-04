@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                  _ ____        _ ____      */
-/*   ft_strlowcase.c                               /  (___\      /  (___\     */
+/*   ft_list.h                                     /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/09/01 18:17:09 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/01 18:17:29 by Karim                                    */
+/*   Created: 2017/09/04 19:59:13 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/04 20:01:44 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+#ifndef FT_LIST_H
+# define FT_LIST_H
+typedef	struct		s_list
 {
-	int		i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] > 64 && str[i] < 91)
-			str[i] += 32;
-		i++;
-	}
-	return (str);
-}
+	void		*data;
+	struct s_list 	*next;
+}			t_list;
+#endif

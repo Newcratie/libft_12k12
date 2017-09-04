@@ -1,47 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                  _ ____        _ ____      */
-/*   ft_strstr.c                                   /  (___\      /  (___\     */
+/*   ft_advanced_sort_wordtab.c                    /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/09/01 18:24:46 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/01 18:24:53 by Karim                                    */
+/*   Created: 2017/09/02 21:15:34 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/02 21:15:41 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_cmp(char *str1, char *str2)
+#include "libft.h"
+
+int		ft_tabcmp(char *s1, char *s2)
 {
 	int		i;
-	int		j;
+	int		diff;
 
 	i = 0;
-	j = 0;
-	while (str1[i] == str2[j])
+	diff = 0;
+	while (s1[i] || s2[i])
 	{
-		if (str2[j + 1] == '\0')
-			return (1);
+		diff = s1[i] - s2[i];
+		if (diff != 0)
+			break ;
 		i++;
-		j++;
 	}
-	return (0);
+	return (diff);
 }
 
-char	*ft_strstr(char *str, char *to_find)
+void 	ft_advanced_sort_wordtab(char **tab, int (*cmp)(char *, char *))
 {
 	int		i;
 	int		j;
+	int		k;
+	char	*tmp;
 
+	k = 0;
 	i = 0;
 	j = 0;
-	while (str[i])
+	while (tab[k])
+		k++;
+	while (tab[i])
 	{
-		if (str[i] == to_find[j])
+		j = 0;
+		while (j < k - 1)
 		{
-			if (1 == ft_cmp(str + i, to_find + j))
-				return (&str[i]);
+			if (0 < cmp(tab[j], tab[j + 1]))
+			{
+				tmp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = tmp;
+			}
+			j++;
 		}
 		i++;
 	}
-	return ("(null)");
 }
+

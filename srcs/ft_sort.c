@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                  /  (___\      /  (___\     */
+/*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abbenham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/08 19:31:13 by abbenham          #+#    #+#             */
-/*   Updated: 2017/09/01 18:16:54 by Karim                                    */
+/*   Created: 2017/08/21 23:31:25 by abbenham          #+#    #+#             */
+/*   Updated: 2017/08/21 23:33:20 by abbenham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static unsigned int	ft_strlen2(char *str)
+void    ft_sort_integer_table(int *tab, int size)
 {
-	int		len;
+	int i;
+	int temp;
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int all_len;
-	unsigned int i;
-
-	all_len = ft_strlen2(src);
 	i = 0;
-	if (*src == '\0')
-		*dest = '\0';
-	while (src[i] && i < size - 1)
+	while (i < size - 1)
 	{
-		dest[i] = src[i];
-		i++;
+		if (tab[i] > tab[i + 1])
+		{
+			temp = tab[i + 1];
+			tab[i + 1] = tab[i];
+			tab[i] = temp;
+			i = 0;
+		}
+		else
+			i++;
 	}
-	return (all_len);
 }

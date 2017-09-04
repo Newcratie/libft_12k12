@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                  _ ____        _ ____      */
-/*   ft_strlowcase.c                               /  (___\      /  (___\     */
+/*   ft_map.c                                      /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/09/01 18:17:09 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/01 18:17:29 by Karim                                    */
+/*   Created: 2017/09/02 20:42:32 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/02 20:42:51 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+#include "libft.h"
+
+int		*ft_map(int *tab, int length, int (*f)(int))
 {
+	int		*tab2;
 	int		i;
 
 	i = 0;
-	while (str[i])
+	if (!(tab2 = (int*)malloc(sizeof(int) * length)))
+		return (0);
+	while (i < length)
 	{
-		if (str[i] > 64 && str[i] < 91)
-			str[i] += 32;
+		tab2[i] = f(tab[i]);
 		i++;
 	}
-	return (str);
+	return (tab2);
 }

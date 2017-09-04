@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                  /  (___\      /  (___\     */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abbenham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/08 19:31:13 by abbenham          #+#    #+#             */
-/*   Updated: 2017/09/01 18:16:54 by Karim                                    */
+/*   Created: 2017/08/21 21:26:31 by abbenham          #+#    #+#             */
+/*   Updated: 2017/08/22 01:31:44 by abbenham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static unsigned int	ft_strlen2(char *str)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	int		len;
+	int		i;
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int all_len;
-	unsigned int i;
-
-	all_len = ft_strlen2(src);
 	i = 0;
-	if (*src == '\0')
-		*dest = '\0';
-	while (src[i] && i < size - 1)
+	while (i < length)
 	{
-		dest[i] = src[i];
+		f(tab[i]);
 		i++;
 	}
-	return (all_len);
 }

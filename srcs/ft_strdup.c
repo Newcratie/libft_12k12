@@ -6,7 +6,7 @@
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
 /*   Created: 2017/08/29 23:55:09 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/08/29 23:55:13 by Karim                                    */
+/*   Updated: 2017/09/01 18:27:10 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(char *src)
 	int		i;
 
 	i = 0;
-	dup = malloc(sizeof(char) * ft_strlen(src) + 1);
+	dup = (char*)malloc(sizeof(char) * ft_strlen(src) + sizeof(char));
 	while (src[i])
 	{
 		dup[i] = src[i];

@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                  _ ____        _ ____      */
-/*   ft_strlowcase.c                               /  (___\      /  (___\     */
+/*   operat.h                                      /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/09/01 18:17:09 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/01 18:17:29 by Karim                                    */
+/*   Created: 2017/09/01 21:28:03 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/01 21:28:25 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
-{
-	int		i;
+#ifndef OPERAT_H
+# define OPERAT_H
+# include "libft.h"
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] > 64 && str[i] < 91)
-			str[i] += 32;
-		i++;
-	}
-	return (str);
-}
+typedef struct	s_ope
+{
+	char	sign;
+	int		(*f)(int, int);
+}				t_ope;
+
+t_ope g_ope[] = {
+
+	{'+', &ft_add},
+	{'-', &ft_sub},
+	{'*', &ft_mul},
+	{'/', &ft_div},
+	{'%', &ft_mod}
+};
+
+#endif
