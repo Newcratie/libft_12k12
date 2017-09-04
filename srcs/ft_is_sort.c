@@ -6,7 +6,7 @@
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
 /*   Created: 2017/09/02 20:50:19 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/02 22:21:47 by Karim                                    */
+/*   Updated: 2017/09/04 20:07:01 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 			flag2 = 0;
 		i++;
 	}
-	return (flag1 == 1 || flag2 == 1)
+	return (flag1 == 1 || flag2 == 1);
 }
