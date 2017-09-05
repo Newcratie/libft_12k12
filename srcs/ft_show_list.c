@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                  _ ____        _ ____      */
-/*   ft_list.h                                     /  (___\      /  (___\     */
+/*   ft_show_list.c                                /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/09/04 19:59:13 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/04 20:18:48 by Karim                                    */
+/*   Created: 2017/09/05 14:43:15 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/05 23:01:56 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
-typedef	struct		s_list
+#include "libft.h"
+#include "ft_list.h"
+
+void	ft_show_list(t_list *first)
 {
-	void		*data;
-	struct s_list 	*next;
-}			t_list;
-#endif
+	while (first)
+	{
+		ft_putendl(first->data);
+		first = first->next;
+	}
+}

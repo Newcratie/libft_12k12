@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                  _ ____        _ ____      */
-/*   ft_list.h                                     /  (___\      /  (___\     */
+/*   ft_list_size.c                                /  (___\      /  (___\     */
 /*                                                 - | __) )_  __- | __) )    */
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
-/*   Created: 2017/09/04 19:59:13 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/04 20:18:48 by Karim                                    */
+/*   Created: 2017/09/05 18:17:50 by Karim         |_|_____)_|\_\|_|_____)    */
+/*   Updated: 2017/09/05 18:34:32 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
-typedef	struct		s_list
+#include "ft_list.h"
+#include "libft.h"
+
+ int ft_list_size(t_list *begin_list)
 {
-	void		*data;
-	struct s_list 	*next;
-}			t_list;
-#endif
+	if (!begin_list)
+		return (0);
+	return (1 + ft_list_size(begin_list->next));
+}

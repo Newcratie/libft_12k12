@@ -5,7 +5,7 @@ CFLAGS=-Iincludes -Wall -Wextra -Werror -fPIC
 SRCS=$(wildcard srcs/*.c)
 OBJS=$(patsubst srcs/%.c,objs/%.o,$(SRCS))
 
-all: static dynamic
+all: static dynamic clear
 
 static: $(NAME).a
 
@@ -24,8 +24,11 @@ objs/%.o: srcs/%.c
 clean:
 	@rm -rf objs
 
-fclean: clean
+fclean: clean 
 	@rm -f $(NAME).a
 	@rm -f $(DYN).so
 
 re: fclean all
+
+clear : 
+	clear 

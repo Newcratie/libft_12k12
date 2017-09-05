@@ -6,7 +6,7 @@
 /*   By: Karim <newcratie@gmail.com>               | |/ __/| |/ /| |/ __/     */
 /*                                                 | | |___|   < | | |___     */
 /*   Created: 2017/08/31 15:34:32 by Karim         |_|_____)_|\_\|_|_____)    */
-/*   Updated: 2017/09/02 22:19:05 by Karim                                    */
+/*   Updated: 2017/09/05 22:27:37 by Karim                                    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include "ft_list.h"
 
 //string
 void		ft_putchar(char c);
@@ -62,6 +63,7 @@ void 		ft_advanced_sort_wordtab(char **tab, int (*cmp)(char *, char *));
 
 //numbers
 void		ft_putnbr(int nb);
+void		ft_nbrendl(int nb);
 int		ft_atoi(char *str);
 int		ft_is_sort(int *tab, int length, int (*f)(int, int));
 
@@ -86,4 +88,13 @@ int		ft_mul(int x, int y);
 int		ft_div(int x, int y);
 int		ft_mod(int x, int y);
 int		ft_add100(int nb);
+
+//liste chainés
+void		ft_show_list(t_list *first);
+t_list		*ft_create_elem(void *data);
+void		ft_list_push_back(t_list **begin_list, void *data);
+void		ft_list_push_front(t_list **begin_list, void *data);
+int		ft_list_size(t_list *begin_list);
+t_list		*ft_list_last(t_list *begin_list);
+t_list		*ft_list_push_params(int ac, char **av);
 #endif
